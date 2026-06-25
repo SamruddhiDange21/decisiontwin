@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DecisionTwin AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>DecisionTwin AI</h1>
+            <p>Turn Decision Overload into Decision Intelligence</p>
+        </header>
+
+        <div class="stats-row">
+            <div class="stat-card">
+                <span>Total Tasks</span>
+                <h2 id="totalTasks">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>High Priority</span>
+                <h2 id="highPriority">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>Efficiency</span>
+                <h2 id="efficiency">0%</h2>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="card input-card">
+                <h2>Add Task</h2>
+
+                <input type="text" id="task" placeholder="Task Name">
+                <input type="number" id="urgency" placeholder="Urgency (1-10)">
+                <input type="number" id="importance" placeholder="Importance (1-10)">
+                <input type="number" id="opportunity" placeholder="Opportunity Value (1-10)">
+
+                <button onclick="addTask()">Add Task</button>
+                <button onclick="analyzeTasks()">Analyze Tasks</button>
+            </div>
+
+            <div class="card insights-card">
+                <h2>Added Tasks</h2>
+                <div id="taskList"></div>
+            </div>
+        </div>
+
+        <div class="card results-card">
+            <h2>AI Recommendations</h2>
+            <div id="results"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
